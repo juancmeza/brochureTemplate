@@ -48,8 +48,20 @@ export default function KeyFeature() {
    <section sx={{variant: 'section.keyFeature'}} id='feature'>
     <Container>
       <SectionHeader
-        slogan=''
+        slogan='slogan goes here'
+        title='Title'
       />
+      <Grid sx={styles.grid}>
+        {data.map((item) => (
+          <FeatureCardColumn 
+            key={item.id}
+            src={item.imgSrc}
+            alt={item.altText}
+            title={item.title}
+            text={item.text}
+          />
+        ))}
+      </Grid>
     </Container>
    </section>
   );
